@@ -1,0 +1,19 @@
+/*barra inferior*/
+.bottom-bar {
+  background: #1273eb;
+  padding: 4px 0px;
+  margin-top: 20px;
+}
+
+footer {
+  color: #ffffff;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer p {
+  margin-top: 5px;
+  text-align: center;
+}

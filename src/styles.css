@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('all.css');
+
+html, body { height: 100%; }
+body { margin: 0 auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/************************************/
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.separador-derecho-boton {
+  margin-right: 10px;
+}
+  
+.formularios-ingreso-datos {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+}
+  
+.campos-input {
+    width: 100%;
+}

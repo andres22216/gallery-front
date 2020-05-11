@@ -1,0 +1,178 @@
+<div class="container">
+<br/>
+<p>Nuevo usuario</p>
+<mat-checkbox>Registrar cuenta</mat-checkbox>
+<button mat-raised-button color="secondary" style="margin-left: 10px">Cancelar</button>
+<br/>
+<br/>
+<p>Por favor registrese para terminar y acceder facílmente al historial de ordenes</p>
+<br/>
+
+<div class="row">
+    <div class="col">Información del comprador</div>
+    <div class="col">Factura</div>
+    <div class="col">Orden de compra</div>
+</div>
+<br/>
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <mat-form-field class="campos-input">
+                <mat-label>Nombre para mostrar</mat-label>
+                <input matInput placeholder="">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="campos-input">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="campos-input">
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="campos-input">
+                <mat-label>Confirmar contraseña</mat-label>
+                <input matInput placeholder="">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Nombre de la compañia</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Código postal</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <select matNativeControl>
+                      <option value="colombia">Colombia</option>
+                    </select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Título</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <select matNativeControl>
+                      <option value="antioquia">Antioquía</option>
+                      <option value="amazonas">Amazonas</option>
+                    </select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Dirección 1</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+        </div>
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Celular</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Dirección 2</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="campos-input">
+                    <mat-label>Fax</mat-label>
+                    <input matInput placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+
+    </div>
+    <div class="col">
+        <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Observaciones para el envío" style="height: 415px"></textarea>
+        </mat-form-field>
+        <!--<div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>-->
+
+        <!--<div class="form-group">
+            <label for="exampleFormControlTextarea1"></label>
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+          </div>-->
+    </div>
+</div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"><mat-checkbox>Enviar a la dirección de facturación</mat-checkbox></div>
+</div>
+<br/>
+<p>Revisar y pagar</p>
+<app-carro-de-compra></app-carro-de-compra>
+</div>
+

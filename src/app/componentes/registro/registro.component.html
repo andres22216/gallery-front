@@ -1,0 +1,209 @@
+<!-- Forma anterior con ngmodel -->
+<!--<div class="contenedor">
+<form class="formularios-ingreso-datos" #formularioRegistro="ngForm" (ngSubmit)="onSubmit()">
+    <br/>
+    <br/>
+    REGISTRATE
+    <br/>
+    <br/>
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="" value="" #inputNombreUsuario="ngModel" name="nombre" [(ngModel)]="usuario.nombres">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="" value="" #inputEmailUsuario="ngModel" name="email" [(ngModel)]="usuario.correoElectronico">
+      </mat-form-field>
+      <small id="emailHelp">Nunca compartas tu email con nadie</small>
+    </div>
+    <br/>
+    <br/>
+    <div>
+      <mat-form-field id="passwordHelp" class="campos-input">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="" value="" #inputContrasenaUsuario="ngModel" name="contrasena" [(ngModel)]="usuario.contrasena">
+      </mat-form-field>
+      <small id="passwordHelp">Introduce entre 6 y 20 caracteres alfanumericos</small>
+    </div>
+    <br/>
+    <br/>
+    <div>
+      <mat-checkbox id="terminos">Declaro que he leído y acepto la nueva política de privacidad y los términos y condiciones de Gallery</mat-checkbox>
+    </div>
+    <br/>
+    <br/>
+    <h3>LISTADO DE USUARIOS</h3>
+    <ul>
+      <li *ngFor="let usuario of listaUsuarios">
+        {{usuario.nombres}} - {{usuario.fechaCreacion}}
+      </li>
+    </ul>
+    <button mat-raised-button color="primary" type="submit">Crear cuenta</button>
+  </form>
+</div>
+
+<button mat-raised-button color="primary" (click)="ver()">Probar servicio</button>-->
+<!-- Forma anterior con ngmodel -->
+
+<!--prueba de formularios reactivos-->
+
+<!--<div class="card m-3">
+  <h5 class="card-header">Angular 8 Reactive Form Validation</h5>
+  <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Title</label>
+                  <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                      <option value=""></option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Miss">Miss</option>
+                      <option value="Ms">Ms</option>
+                  </select>
+                  <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                      <div *ngIf="f.title.errors.required">Title is required</div>
+                  </div>
+              </div>
+              <div class="form-group col-5">
+                  <label>First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                  <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  </div>
+              </div>
+
+              <div class="form-group col-5">
+                  <label>Last Name</label>
+                  <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                  <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Password</label>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+              </div>
+              <div class="form-group col">
+                  <label>Confirm Password</label>
+                  <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                      <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group form-check">
+              <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+              <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+              <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+          </div>
+          <div class="text-center">
+              <button class="btn btn-primary mr-1">Register</button>
+              <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+          </div>
+      </form>
+  </div>
+</div>-->
+
+<div class="container">
+  <app-mensaje-error-exito></app-mensaje-error-exito>
+  <form class="formularios-ingreso-datos" [formGroup]="registroForm" autocomplete="off" (ngSubmit)="onSubmit()">
+      <br/>
+      <br/>
+      <h6>REGISTRATE</h6>
+      <br/>
+      <br/>
+      <div>
+        <mat-form-field class="campos-input">
+          <mat-label>Nombre(s)</mat-label>
+          <input matInput placeholder="" formControlName="nombre">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="campos-input">
+          <mat-label>Apellido(s)</mat-label>
+          <input matInput placeholder="" formControlName="apellidos">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="campos-input">
+          <mat-label>Nickname</mat-label>
+          <input matInput placeholder="" formControlName="apodo">
+        </mat-form-field>
+      </div>
+  
+      <div>
+        <mat-form-field class="campos-input">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="" formControlName="email">
+        </mat-form-field>
+        <mat-error>
+          <small *ngIf="f.email.errors?.email">Correo inválido</small>
+        </mat-error>
+        <br/>
+        <!--<small id="emailHelp">Nunca compartas tu email con nadie</small>-->
+      </div>
+      <br/>
+      <div>
+        <mat-form-field class="campos-input">
+          <mat-label>Contraseña</mat-label>
+          <input [type]="hide ? 'password' : 'text'" matInput placeholder="" formControlName="contrasena">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          <mat-error>
+            <span *ngIf="f.contrasena.errors?.minlength">Debe ingresar mínimo 6 caracteres.</span>
+          </mat-error>
+          <mat-error>
+            <span *ngIf="f.contrasena.errors?.maxlength">Debe ingresar máximo 20 caracteres.</span>
+          </mat-error>
+        </mat-form-field>
+        <small>Introduce entre 6 y 20 caracteres alfanumericos</small>
+      </div>
+      <br/>
+      <br/>
+      <div>
+          <mat-checkbox formControlName="terminos">
+            Declaro que he leído y acepto la política de privacidad y los términos y condiciones de Gallery
+          </mat-checkbox>
+          <mat-error>
+            <small *ngIf="!errorEnTerminos">Debe aceptar términos y condiciones</small>
+          </mat-error>
+      </div>
+      <br/>
+      <br/>
+      <!--<h3>LISTADO DE USUARIOS</h3>
+      <ul>
+        <li *ngFor="let usuario of listaUsuarios">
+          {{usuario.nombres}} - {{usuario.fechaCreacion}}
+        </li>
+      </ul>-->
+      <div>
+        <button mat-raised-button color="primary" style="margin-right: 10px" type="submit">Crear cuenta</button>
+        <button mat-raised-button color="primary" (click)="consultarTodosLosUsuarios()">Probar servicio</button>
+      </div>
+    </form>
+  </div>
+  
+  
