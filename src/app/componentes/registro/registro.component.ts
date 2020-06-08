@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/modelo/usuario';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../../_helpers/must-match.validator';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',

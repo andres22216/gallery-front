@@ -126,84 +126,118 @@
 
 <div class="container">
   <app-mensaje-error-exito></app-mensaje-error-exito>
-  <form class="formularios-ingreso-datos" [formGroup]="registroForm" autocomplete="off" (ngSubmit)="onSubmit()">
-      <br/>
-      <br/>
-      <h6>REGISTRATE</h6>
-      <br/>
-      <br/>
-      <div>
-        <mat-form-field class="campos-input">
-          <mat-label>Nombre(s)</mat-label>
-          <input matInput placeholder="" formControlName="nombre">
-        </mat-form-field>
-      </div>
+  <form
+    class="formularios-ingreso-datos"
+    [formGroup]="registroForm"
+    autocomplete="off"
+    (ngSubmit)="onSubmit()"
+  >
+    <br />
+    <br />
+    <h6>REGISTRATE</h6>
+    <br />
+    <br />
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Nombre(s)</mat-label>
+        <input matInput placeholder="" formControlName="nombre" />
+      </mat-form-field>
+    </div>
 
-      <div>
-        <mat-form-field class="campos-input">
-          <mat-label>Apellido(s)</mat-label>
-          <input matInput placeholder="" formControlName="apellidos">
-        </mat-form-field>
-      </div>
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Apellido(s)</mat-label>
+        <input matInput placeholder="" formControlName="apellidos" />
+      </mat-form-field>
+    </div>
 
-      <div>
-        <mat-form-field class="campos-input">
-          <mat-label>Nickname</mat-label>
-          <input matInput placeholder="" formControlName="apodo">
-        </mat-form-field>
-      </div>
-  
-      <div>
-        <mat-form-field class="campos-input">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="" formControlName="email">
-        </mat-form-field>
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Nickname</mat-label>
+        <input matInput placeholder="" formControlName="apodo" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="" formControlName="email" />
+      </mat-form-field>
+      <mat-error>
+        <small *ngIf="f.email.errors?.email">Correo inválido</small>
+      </mat-error>
+      <br />
+      <!--<small id="emailHelp">Nunca compartas tu email con nadie</small>-->
+    </div>
+    <br />
+    <div>
+      <mat-form-field class="campos-input">
+        <mat-label>Contraseña</mat-label>
+        <input
+          [type]="hide ? 'password' : 'text'"
+          matInput
+          placeholder=""
+          formControlName="contrasena"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
         <mat-error>
-          <small *ngIf="f.email.errors?.email">Correo inválido</small>
+          <span *ngIf="f.contrasena.errors?.minlength"
+            >Debe ingresar mínimo 6 caracteres.</span
+          >
         </mat-error>
-        <br/>
-        <!--<small id="emailHelp">Nunca compartas tu email con nadie</small>-->
-      </div>
-      <br/>
-      <div>
-        <mat-form-field class="campos-input">
-          <mat-label>Contraseña</mat-label>
-          <input [type]="hide ? 'password' : 'text'" matInput placeholder="" formControlName="contrasena">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          <mat-error>
-            <span *ngIf="f.contrasena.errors?.minlength">Debe ingresar mínimo 6 caracteres.</span>
-          </mat-error>
-          <mat-error>
-            <span *ngIf="f.contrasena.errors?.maxlength">Debe ingresar máximo 20 caracteres.</span>
-          </mat-error>
-        </mat-form-field>
-        <small>Introduce entre 6 y 20 caracteres alfanumericos</small>
-      </div>
-      <br/>
-      <br/>
-      <div>
-          <mat-checkbox formControlName="terminos">
-            Declaro que he leído y acepto la política de privacidad y los términos y condiciones de Gallery
-          </mat-checkbox>
-          <mat-error>
-            <small *ngIf="!errorEnTerminos">Debe aceptar términos y condiciones</small>
-          </mat-error>
-      </div>
-      <br/>
-      <br/>
-      <!--<h3>LISTADO DE USUARIOS</h3>
+        <mat-error>
+          <span *ngIf="f.contrasena.errors?.maxlength"
+            >Debe ingresar máximo 20 caracteres.</span
+          >
+        </mat-error>
+      </mat-form-field>
+      <small>Introduce entre 6 y 20 caracteres alfanumericos</small>
+    </div>
+    <br />
+    <br />
+    <div>
+      <mat-checkbox formControlName="terminos">
+        Declaro que he leído y acepto la política de privacidad y los términos y
+        condiciones de Gallery
+      </mat-checkbox>
+      <mat-error>
+        <small *ngIf="!errorEnTerminos"
+          >Debe aceptar términos y condiciones</small
+        >
+      </mat-error>
+    </div>
+    <br />
+    <br />
+    <!--<h3>LISTADO DE USUARIOS</h3>
       <ul>
         <li *ngFor="let usuario of listaUsuarios">
           {{usuario.nombres}} - {{usuario.fechaCreacion}}
         </li>
       </ul>-->
-      <div>
-        <button mat-raised-button color="primary" style="margin-right: 10px" type="submit">Crear cuenta</button>
-        <button mat-raised-button color="primary" (click)="consultarTodosLosUsuarios()">Probar servicio</button>
-      </div>
-    </form>
-  </div>
-  
-  
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        style="margin-right: 10px;"
+        type="submit"
+      >
+        Crear cuenta
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="consultarTodosLosUsuarios()"
+      >
+        Probar servicio
+      </button>
+    </div>
+  </form>
+</div>
